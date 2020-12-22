@@ -1,1 +1,75 @@
-/*Maak hier jouw CSS!*/
+/*CSS Reset*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*Styling voor mobiele apparaten (kleiner dan 576px)*/
+.container {
+    padding: 20px;
+    background-color: hsl(32, 100%, 93%);
+    display: grid;
+    column-gap: 16px;
+    row-gap: 16px;
+
+    grid-template-columns: 1fr;
+    /*dit mag ook: grid-template-rows: 50px auto 50px 50px 50px 50px 50px;*/
+    grid-template-rows: 50px auto repeat(5, 50px);
+    grid-template-areas:
+        "a"
+        "b"
+        "c"
+        "d"
+        "e"
+        "."
+        "f";
+}
+
+.item {
+    background-color: hsl(355, 52%, 48%);
+    border: 2px solid hsl(355, 52%, 38%);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+#item-a {
+    grid-area: a;
+}
+
+#item-b {
+    grid-area: b;
+}
+
+#item-c {
+    grid-area: c;
+}
+
+#item-d {
+    grid-area: d;
+}
+
+#item-e {
+    grid-area: e;
+}
+
+#item-f {
+    grid-area: f;
+}
+
+@media screen and (min-width: 576px) {
+    /*Alleen de properties die overschreven moeten worden, zijn opnieuw gedefinieerd in deze breakpoint*/
+    /*Properties zoals display:grid, row-gap etc. worden simpelweg toegepast op alle maten tenzij we ze expliciet overschrijven in een breakpoint.*/
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 50px 190px 100px auto 50px;
+        grid-template-areas:
+                "a c c"
+                "b c c"
+                "b e d"
+                "b e ."
+                "f f f";
+    }
+}
