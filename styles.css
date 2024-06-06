@@ -1,1 +1,65 @@
-/*Maak hier jouw CSS!*/
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --default-spacing: 1rem;
+  --default-background-color: #fdedd9;
+  --default-box-color: #b93a45;
+}
+
+body {
+  background-color: var(--default-background-color);
+  min-height: 100vh;
+  color: #fff;
+}
+
+.box {
+  background-color: var(--default-box-color);
+  padding: var(--default-spacing);
+}
+
+
+/*grid */
+.outer-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows:repeat(3, auto);
+  grid-template-areas:
+    "a c c"
+    "b c c"
+    "b e d"
+    "f f f";
+  grid-gap: var(--default-spacing);
+  margin: var(--default-spacing);
+}
+
+.a {
+  grid-area: a;
+  /*background: red;*/
+  height: 50px;
+}
+
+.b {
+  grid-area: b;
+}
+.c {
+  grid-area: c;
+  height: 240px;
+}
+
+.d {
+  grid-area: d;
+  /*height: 100px;*/
+}
+.e {
+  grid-area: e;
+}
+
+.f {
+  grid-area: f;
+  height: 50px;
+}
+
