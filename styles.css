@@ -31,6 +31,7 @@ body {
     "a c c"
     "b c c"
     "b e d"
+    "b e d"
     "f f f";
   grid-gap: var(--default-spacing);
   margin: var(--default-spacing);
